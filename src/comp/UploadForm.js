@@ -26,10 +26,10 @@ const UploadForm = () => {
                 <input type='file' onChange={handlePictureSubmit} />
                 <span> + </span>
             </label>
-            <ProgressBar />
             <div className='output'>
                 { error && (<div className='error' >{error}</div>)}
                 { file && (<div>{ file.name }</div>)}
+                { file && <ProgressBar file={file} setFile={setFile} /> }
             </div>
         </form>
     )
